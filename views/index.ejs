@@ -14,9 +14,195 @@
             height: 200px;
             background-color: #f0f0f0;
         }
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .search-bar {
+                width: 100%;
+                margin: 0;
+            }
+
+            .delivery-info {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            .cart-button {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .next-button {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+        }
     </style>
 
-    <body class="bg-gray-100 font-sans">
+    <body class="bg-white font-sans">
+        <div class="bg-white border-b border-green-500">
+            <div class="mx-auto px-4">
+                <div class="header-content flex items-center justify-between py-4 gap-4">
+                    <!-- Logo -->
+
+                    <!-- Delivery Location -->
+                    <div class="delivery-info flex items-center space-x-2 text-gray-600">
+                        <svg width="134" height="30" viewBox="0 0 114 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.3342 7.186C16.2619 7.186 17.9832 7.66644 19.4978 8.62732C21.0262 9.57447 22.2242 10.9197 23.0917 12.663C23.9316 14.3377 24.3516 16.3075 24.3516 18.5724C24.3516 20.7687 23.9316 22.7316 23.0917 24.4612C22.2517 26.1908 21.0675 27.5429 19.5391 28.5175C17.9969 29.5058 16.2619 30 14.3342 30C12.9297 30 11.6078 29.7117 10.3685 29.1352C9.12927 28.5587 8.06901 27.7488 7.18775 26.7056V29.4852H0V0H7.18775V10.4598C8.06901 9.41661 9.12927 8.61359 10.3685 8.05079C11.6078 7.47426 12.9297 7.186 14.3342 7.186ZM12.1861 24.0494C13.2051 24.0494 14.1139 23.8161 14.9125 23.3493C15.7112 22.8826 16.3377 22.2306 16.7921 21.3933C17.2465 20.5697 17.4737 19.6294 17.4737 18.5724C17.4737 17.5429 17.2465 16.6095 16.7921 15.7721C16.3377 14.9348 15.7112 14.2828 14.9125 13.8161C14.1139 13.3493 13.2051 13.116 12.1861 13.116C11.2223 13.116 10.3617 13.3493 9.60432 13.8161C8.84699 14.269 8.2549 14.9073 7.82804 15.731C7.40118 16.5683 7.18775 17.5154 7.18775 18.5724C7.18775 19.6294 7.40118 20.5765 7.82804 21.4139C8.2549 22.2375 8.84699 22.8826 9.60432 23.3493C10.3617 23.8161 11.2223 24.0494 12.1861 24.0494Z" fill="#F8CB46"></path><path d="M25.3356 29.4852V0H32.5233V29.4852H25.3356Z" fill="#F8CB46"></path><path d="M34.5607 29.4852V7.68016H41.7071V29.4852H34.5607Z" fill="#F8CB46"></path><path d="M57.2319 7.186C58.7603 7.186 60.1372 7.5429 61.3627 8.25669C62.5882 8.95676 63.5521 9.94509 64.2544 11.2217C64.9291 12.512 65.2664 13.9739 65.2664 15.6074V29.4852H58.4092V17.2135C58.4092 16.4173 58.2508 15.7104 57.9341 15.0927C57.6312 14.4612 57.1974 13.9739 56.6329 13.6307C56.0821 13.2876 55.4349 13.116 54.6914 13.116C53.9891 13.116 53.3419 13.2876 52.7498 13.6307C52.1577 13.9602 51.6965 14.4132 51.366 14.9897C51.0218 15.5388 50.8496 16.1839 50.8496 16.9252L50.8083 29.4852H43.6619V7.68016H50.8083V10.1716C51.483 9.23816 52.3849 8.51064 53.5141 7.98902C54.6432 7.45367 55.8824 7.186 57.2319 7.186Z" fill="#F8CB46"></path><path d="M81.0597 17.2135L89.1769 29.4852H81.0597L76.3091 21.7639L74.1198 24.2965V29.4852H66.932V0H74.1198V16.2869L81.0184 7.68016H89.1356L81.0597 17.2135Z" fill="#F8CB46"></path><path d="M34.5569 0.00232667H41.7267V5.59207H34.5569V0.00232667Z" fill="#F8CB46"></path><path d="M90.3176 29.4198V7.61479H97.464V29.4198H90.3176Z" fill="#54B226"></path><path d="M112.575 23.2634L114 27.855C113.353 28.4727 112.534 28.9737 111.542 29.3581C110.564 29.7424 109.607 29.9346 108.671 29.9346C107.322 29.9346 106.117 29.6395 105.057 29.0492C103.996 28.4452 103.17 27.6079 102.578 26.5372C101.986 25.494 101.69 24.2929 101.69 22.9339V13.3183H98.819V7.61479H101.69V0.00241089H108.547V7.61479H113.071V13.3183H108.547V21.6161C108.547 22.3162 108.733 22.8859 109.105 23.3251C109.477 23.7644 109.952 23.984 110.53 23.984C110.943 23.984 111.329 23.9223 111.687 23.7987C112.045 23.6752 112.341 23.4967 112.575 23.2634Z" fill="#54B226"></path><path d="M90.2609 0.00241089H97.4307V5.59215H90.2609V0.00241089Z" fill="#54B226"></path></svg>
+                        <div class="pl-4 border-l border-green-500">
+                            <span class="text-xl md:text-2xl font-bold text-black/80">Delivery in 10 minutes</span><br>
+                            <button class="text-green-500">Select location</button>
+                        </div>
+                    </div>
+
+                    <!-- Search Bar -->
+                    <div class="search-bar flex-1 mx-2 md:mx-8">
+                        <div class="relative">
+                            <input type="text" placeholder="Search for products" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute right-3 top-2.5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Login Button -->
+                    <div class="hidden md:block">
+                        <button class="px-6 py-2 text-white bg-green-500 rounded-lg hover:bg-green-600">Login</button>
+                    </div>
+
+                    <!-- Cart Button -->
+                    <div class="cart-button ml-2 md:ml-4">
+                        <button class="flex items-center space-x-2 px-4 py-2 text-white bg-green-500 rounded-lg hover:bg-green-600 w-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                            </svg>
+                            <span>Cart</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-yellow-400 py-2">
+            <div class="max-w-screen-lg mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0">
+                    <p class="text-sm font-medium text-center md:text-left">India's Last Mile Delivery Platform</p>
+                    <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
+                        <span class="text-sm">Download Blinkit App</span>
+                        <a href="#" class="flex items-center space-x-2 bg-black text-white px-3 py-1 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M17.721 1.599a.75.75 0 01.279.584v11.29a.75.75 0 01-1.279.53l-2.199-2.199 4.026 4.025a.75.75 0 11-1.06 1.06L13.41 12.81l-.862.862a.75.75 0 01-1.06 0l-.862-.862-3.075 3.075a.75.75 0 01-1.06-1.06l4.026-4.025-2.2 2.199a.75.75 0 01-1.279-.53V2.183a.75.75 0 01.279-.584l.153-.153a.75.75 0 01.994-.055l6.5 5.25a.75.75 0 010 1.174l-6.5 5.25a.75.75 0 01-.994-.055l-.153-.153A.75.75 0 014 13.817V2.183a.75.75 0 01.279-.584l.153-.153a.75.75 0 01.994-.055l6.5 5.25a.75.75 0 010 1.174l-6.5 5.25a.75.75 0 01-.994-.055l-.153-.153z"/>
+                            </svg>
+                            <span>Get the app</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-screen-lg mx-auto p-4">
+            <div class="flex justify-center">
+                <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=2700/layout-engine/2022-05/Group-33704.jpg" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+        </div>
+        <div class="max-w-screen-lg mx-auto p-4">
+            <div id="itemGrid" class="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4">
+                <div class="flex flex-col items-center">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-12/paan-corner_web.png" alt="Paan Corner" class="w-32 h-48 object-cover">
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-2_10.png" alt="Dairy, Bread & Eggs" class="w-32 h-48 object-cover">
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-3_9.png" alt="Fruits & Vegetables" class="w-32 h-48 object-cover">
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-4_9.png" alt="Cold Drinks & Juices" class="w-32 h-48 object-cover">
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-5_4.png" alt="Snacks & Munchies" class="w-32 h-48 object-cover">
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-6_5.png" alt="Breakfast & Instant Food" class="w-32 h-48 object-cover">
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-7_3.png" alt="Sweet Tooth" class="w-32 h-48 object-cover">
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-8_4.png" alt="Bakery & Biscuits" class="w-32 h-48 object-cover">
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-9_3.png" alt="Tea, Coffee & Health Drink" class="w-32 h-48 object-cover">
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-10.png" alt="Atta, Rice & Dal" class="w-32 h-48 object-cover">
+                </div>
+                <div class="flex flex-col items-center ">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-11.png" alt="Masala, Oil & More" class="w-32 h-48 object-cover">
+                </div>
+                <div class="flex flex-col items-center ">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-12.png" alt="Sauces & Spreads" class="w-32 h-48 object-cover">
+                </div>
+                <div class="flex flex-col items-center hidden">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-13.png" alt="Chicken, Meat & Fish" class="w-32 h-48 object-cover">
+                </div>
+                <div class="flex flex-col items-center hidden">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-14.png" alt="Organic & Healthy Living" class="w-32 h-48 object-cover">
+                </div>
+                <div class="flex flex-col items-center hidden">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-15.png" alt="Baby Care" class="w-32 h-48 object-cover">
+                </div>
+                <div class="flex flex-col items-center hidden">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-16.png" alt="Pharma & Wellness" class="w-32 h-48 object-cover">
+                </div>
+                <div class="flex flex-col items-center hidden">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-17.png" alt="Cleaning Essentials" class="w-32 h-48 object-cover">
+                </div>
+                <div class="flex flex-col items-center hidden">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-18.png" alt="Home & Office" class="w-32 h-48 object-cover">
+                </div>
+                <div class="flex flex-col items-center hidden">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-19.png" alt="Personal Care" class="w-32 h-48 object-cover">
+                </div>
+                <div class="flex flex-col items-center hidden">
+                    <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-20.png" alt="Pet Care" class="w-32 h-48 object-cover">
+                </div>
+            </div>
+            <div class="mt-4">
+                <button onclick="showMore()" id="showMoreBtn" class="px-6 py-2 text-green-500 rounded-lg">Show More</button>
+                <button onclick="showLess()" id="showLessBtn" class="px-6 py-2 text-green-500 rounded-lg hidden">Show Less</button>
+            </div>
+        </div>
+        <script>
+            function showMore() {
+                const hiddenItems = document.querySelectorAll('.hidden');
+                hiddenItems.forEach(item => {
+                    item.classList.remove('hidden');
+                });
+                document.getElementById('showMoreBtn').style.display = 'none';
+                document.getElementById('showLessBtn').classList.remove('hidden');
+            }
+
+            function showLess() {
+                const items = document.querySelectorAll('.flex.flex-col.items-center');
+                items.forEach((item, index) => {
+                    if (index >= 8) { // Keep first 8 items visible
+                        item.classList.add('hidden');
+                    }
+                });
+                document.getElementById('showMoreBtn').style.display = 'block';
+                document.getElementById('showLessBtn').classList.add('hidden');
+            }
+        </script>
         <div class="max-w-screen-lg mx-auto p-4">
             <!-- Order Now Section -->
             <div class="bg-white p-4 rounded-lg shadow mb-4">
@@ -78,20 +264,42 @@
 
             <!-- Grocery & Kitchen Section -->
             <% for(let key in products){ %>
-                <div class="bg-white p-4 rounded-lg shadow mb-10">
-                    <h2 class="text-lg font-semibold">
-                        <%= key %>
-                    </h2>
-                    <div class="grid grid-cols-4 gap-4 mt-4">
+                <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200 mb-10">
+                    <div class="flex items-center justify-between">
+                        <h2 class="text-lg font-semibold">
+                            <%= key %>
+                        </h2>
+                        <a href="#" class="text-sm text-green-600">See all</a>
+                    </div>
+                    <div class="product-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4">
                         <% products[key].forEach(elem=>{ %>
-                            <div class="flex flex-col items-center">
-                                <img src="data:image/jpg;base64, <%= elem.image.toString('base64') %>"
-                                    alt="<%= elem.name %>" class="w-24 rounded">
-                                <p class="text-sm text-center mt-2">
-                                    <%= elem.name %>
-                                </p>
-                                <a class="px-4 text-white text-xs rounded mt-2 inline-block py-1 bg-green-700"
-                                    href="/cart/add/<%= elem._id %>">ADD</a>
+                            <div class="flex flex-col bg-white rounded-lg p-3 shadow-sm border border-gray-200 w-[200px]">
+                                <div class="relative w-[140px] h-[140px] mx-auto">
+                                    <img src="data:image/jpg;base64, <%= elem.image.toString('base64') %>"
+                                        alt="<%= elem.name %>" class="w-full h-full object-contain rounded scale-110">
+                                    <div class="absolute top-2 left-2">
+                                        <div class="bg-[#f8f8f8] text-[8px] px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                                            <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=90/assets/eta-icons/15-mins.png" 
+                                                class="w-[20px] h-[20px]">
+                                            <span class="uppercase font-bold text-[#363636] text-[7px]">9 mins</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <div class="flex flex-col">
+                                        <p class="text-sm font-medium line-clamp-2">
+                                            <%= elem.name %>
+                                        </p>
+                                        <span class="text-xs text-gray-600 mt-1">32 sheets</span>
+                                    </div>
+                                    <div class="flex items-center justify-between mt-2">
+                                        <div class="text-xs font-semibold">₹<%= elem.price %></div>
+                                        <a class="bg-white text-green-600 text-xs px-4 py-1 rounded border border-green-600 hover:bg-green-50"
+                                            href="/cart/add/<%= elem._id %>">
+                                            ADD
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                             <%}) %>
                     </div>
@@ -102,25 +310,24 @@
                         <div class="py-20"></div>
                         <!-- Footer -->
                         <div class="bg-white p-4 rounded-lg shadow fixed bottom-0 inset-x-0">
-                            <div class="flex justify-between items-center mb-10">
-                                <div>
+                            <div class="flex flex-col md:flex-row justify-between items-center mb-4 md:mb-10">
+                                <div class="text-center md:text-left mb-4 md:mb-0">
                                     <p class="text-sm">Get FREE delivery</p>
                                     <p class="text-xs text-gray-500">Add products worth ₹236 more</p>
                                 </div>
                                 <button class="text-blue-500">See all coupons</button>
                             </div>
-                            <div class="flex justify-between items-center mt-2">
+                            <div class="flex flex-col md:flex-row justify-between items-center mt-2 gap-4">
                                 <div>
                                     <%= cartCount %> Item
                                 </div>
                                 <a href="/cart"
-                                    class="flex items-center justify-center px-32 py-3 bg-green-700 text-white rounded-lg"><span
+                                    class="next-button flex items-center justify-center px-8 md:px-32 py-3 bg-green-700 text-white rounded-lg w-full md:w-auto"><span
                                         class="text-lg">Next</span><i class="text-2xl ri-arrow-right-s-fill"></i></a>
                             </div>
                         </div>
                         <% } %>
         </div>
-
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script>
             var swiper = new Swiper('.swiper-container', {
