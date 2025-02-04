@@ -231,124 +231,68 @@
                 </div>
             </div>
 
-            <!-- Offers Section -->
-            <div class="swiper-container my-10 w-full overflow-hidden">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide rounded-xl overflow-hidden">
-                        <a href="https://sheryians.com"><img class="w-full h-full object-cover"
-                                src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/Pet-Care_WEB.jpg"
-                                alt=""></a>
-                    </div>
-                    <div class="swiper-slide rounded-xl overflow-hidden">
-                        <img class="w-full h-full object-cover"
-                            src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/pharmacy-WEB.jpg"
-                            alt="">
-                    </div>
-                    <div class="swiper-slide rounded-xl overflow-hidden">
-                        <img class="w-full h-full object-cover"
-                            src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/Pet-Care_WEB.jpg"
-                            alt="">
-                    </div>
-                    <div class="swiper-slide rounded-xl overflow-hidden">
-                        <img class="w-full h-full object-cover"
-                            src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/Pet-Care_WEB.jpg"
-                            alt="">
-                    </div>
-                    <div class="swiper-slide rounded-xl overflow-hidden">
-                        <img class="w-full h-full object-cover"
-                            src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/Pet-Care_WEB.jpg"
-                            alt="">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Grocery & Kitchen Section -->
-            <% for(let key in products){ %>
-                <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200 mb-10">
-                    <div class="flex items-center justify-between">
-                        <h2 class="text-lg font-semibold">
-                            <%= key %>
-                        </h2>
-                        <a href="#" class="text-sm text-green-600">See all</a>
-                    </div>
-                    <div class="product-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4">
-                        <% products[key].forEach(elem=>{ %>
-                            <div class="flex flex-col bg-white rounded-lg p-3 shadow-sm border border-gray-200 w-[200px]">
-                                <div class="relative w-[140px] h-[140px] mx-auto">
-                                    <img src="data:image/jpg;base64, <%= elem.image.toString('base64') %>"
-                                        alt="<%= elem.name %>" class="w-full h-full object-contain rounded scale-110">
-                                    <div class="absolute top-2 left-2">
-                                        <div class="bg-[#f8f8f8] text-[8px] px-1.5 py-0.5 rounded flex items-center gap-0.5">
-                                            <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=90/assets/eta-icons/15-mins.png" 
-                                                class="w-[20px] h-[20px]">
-                                            <span class="uppercase font-bold text-[#363636] text-[7px]">9 mins</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mt-2">
-                                    <div class="flex flex-col">
-                                        <p class="text-sm font-medium line-clamp-2">
-                                            <%= elem.name %>
-                                        </p>
-                                        <span class="text-xs text-gray-600 mt-1">32 sheets</span>
-                                    </div>
-                                    <div class="flex items-center justify-between mt-2">
-                                        <div class="text-xs font-semibold">₹<%= elem.price %></div>
-                                        <a class="bg-white text-green-600 text-xs px-4 py-1 rounded border border-green-600 hover:bg-green-50"
-                                            href="/cart/add/<%= elem._id %>">
-                                            ADD
-                                        </a>
-                                    </div>
-                                </div>
+<!-- Grocery & Kitchen Section -->
+<% for(let key in products){ %>
+    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200 mb-10">
+        <div class="flex items-center justify-between">
+            <h2 class="text-lg font-semibold">
+                <%= key %>
+            </h2>
+            <a href="#" class="text-sm text-green-600">See all</a>
+        </div>
+        <div class="product-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4">
+            <% products[key].forEach(elem=>{ %>
+                <div class="flex flex-col bg-white rounded-lg p-3 shadow-sm border border-gray-200">
+                    <div class="relative w-full h-40 mx-auto">
+                        <img src="data:image/jpg;base64, <%= elem.image.toString('base64') %>"
+                            alt="<%= elem.name %>" class="w-full h-full object-contain rounded">
+                        <div class="absolute top-2 left-2">
+                            <div class="bg-[#f8f8f8] text-[8px] px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                                <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=90/assets/eta-icons/15-mins.png" 
+                                    class="w-[20px] h-[20px]">
+                                <span class="uppercase font-bold text-[#363636] text-[7px]">9 mins</span>
                             </div>
-                            <%}) %>
+                        </div>
+                    </div>
+                    <div class="mt-2 flex flex-col items-center">
+                        <p class="text-sm font-medium line-clamp-2 text-center">
+                            <%= elem.name %>
+                        </p>
+                        <span class="text-xs text-gray-600 mt-1"><%= elem.category %></span>
+                        <div class="text-xs font-semibold mt-2">₹<%= elem.price %></div>
+                        <a class="bg-green-700 text-white text-xs px-4 py-1 rounded mt-2 inline-block"
+                            href="/cart/add/<%= elem._id %>">ADD</a>
                     </div>
                 </div>
-                <% } %>
+            <%}) %>
+        </div>
+    </div>
+<% } %>
 
                     <% if(somethingInCart){ %>
                         <div class="py-20"></div>
                         <!-- Footer -->
-                        <div class="bg-white p-4 rounded-lg shadow fixed bottom-0 inset-x-0">
-                            <div class="flex flex-col md:flex-row justify-between items-center mb-4 md:mb-10">
-                                <div class="text-center md:text-left mb-4 md:mb-0">
-                                    <p class="text-sm">Get FREE delivery</p>
-                                    <p class="text-xs text-gray-500">Add products worth ₹236 more</p>
+                        <div class="flex item-center text-white justify-center  p-4 rounded-lg shadow fixed bottom-0 inset-x-0 ">
+                            
+                            <div class="flex bg-green-700 rounded-md w-2/3 justify-between items-center mt-2 gap-4">
+                                <div class="flex flex-col md:flex-row gap-10 justify-between items-center p-3">
+                                    <div class="text-center md:text-left mb-4 md:mb-0">
+                                        <p class="text-sm">Get FREE delivery</p>
+                                        <p class="text-xs text-gray-200">Add products worth ₹236 more</p>
+                                    </div>
+                                    <div class="font-medium" >
+                                        <%= cartCount %> Item
+                                    </div>
                                 </div>
-                                <button class="text-blue-500">See all coupons</button>
-                            </div>
-                            <div class="flex flex-col md:flex-row justify-between items-center mt-2 gap-4">
-                                <div>
-                                    <%= cartCount %> Item
-                                </div>
+                                
                                 <a href="/cart"
-                                    class="next-button flex items-center justify-center px-8 md:px-32 py-3 bg-green-700 text-white rounded-lg w-full md:w-auto"><span
-                                        class="text-lg">Next</span><i class="text-2xl ri-arrow-right-s-fill"></i></a>
+                                    class="next-button flex items-center justify-center pr-2 "><span
+                                        class="text-lg">View Cart</span><i class="text-2xl ri-arrow-right-s-fill"></i></a>
                             </div>
                         </div>
                         <% } %>
         </div>
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        <script>
-            var swiper = new Swiper('.swiper-container', {
-                effect: 'coverflow',
-                grabCursor: true,
-                centeredSlides: true,
-                slidesPerView: 'auto',
-                coverflowEffect: {
-                    rotate: 10,
-                    stretch: 0,
-                    depth: 10,
-                    modifier: 1,
-                    slideShadows: true,
-                },
-                loop: true,
-                autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: false,
-                },
-            });
-        </script>
         <script>
             // Save the scroll position to localStorage
             window.addEventListener('scroll', function () {
